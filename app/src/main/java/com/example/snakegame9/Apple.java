@@ -11,15 +11,15 @@ import java.util.Random;
 // Import Drawable interface
 import com.example.snakegame9.Drawable;
 
-class Apple implements Drawable {
+public class Apple extends MovableObject implements Drawable {
 
     // The location of the apple on the grid
     // Not in pixels
-    private Point location = new Point();
+    //private Point location = new Point();
 
     // The range of values we can choose from
     // to spawn an apple
-    private Point mSpawnRange;
+   private Point mSpawnRange;
     private int mSize;
 
     // An image to represent the apple
@@ -27,11 +27,13 @@ class Apple implements Drawable {
 
     /// Set up the apple in the constructor
     Apple(Context context, Point sr, int s){
-
+    super();
         // Make a note of the passed in spawn range
-        mSpawnRange = sr;
+       mSpawnRange = sr;
         // Make a note of the size of an apple
         mSize = s;
+        // Initialize the location
+        location = new Point();
         // Hide the apple off-screen until the game starts
         location.x = -10;
 
@@ -42,6 +44,9 @@ class Apple implements Drawable {
         mBitmapApple = Bitmap.createScaledBitmap(mBitmapApple, s, s, false);
     }
 
+    public void move() {
+        // Apples don't move, so this method is empty
+    }
     // This is called every time an apple is eaten
     void spawn(){
         // Choose two random values and place the apple
@@ -52,9 +57,7 @@ class Apple implements Drawable {
 
     // Let SnakeGame know where the apple is
     // SnakeGame can share this with the snake
-    Point getLocation(){
-        return location;
-    }
+   // Point getLocation(){return location;}
 
     // Draw the apple
     public void draw(Canvas canvas, Paint paint){
