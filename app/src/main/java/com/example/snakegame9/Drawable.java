@@ -2,6 +2,7 @@ package com.example.snakegame9;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+
 public interface Drawable {
-    public void draw(Canvas canvas, Paint paint);
+    void draw(Canvas canvas, Paint paint);
 }

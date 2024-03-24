@@ -11,10 +11,9 @@ import android.view.MotionEvent;
 import java.util.ArrayList;
 
 // Import Movable and Drawable interfaces
-import com.example.snakegame9.Movable;
-import com.example.snakegame9.Drawable;
 
-class Snake implements Movable, Drawable{
+
+class Snake extends GameObject implements Movable, Drawable{
 
     // The location in the grid of all the segments
     private ArrayList<Point> segmentLocations;
@@ -129,7 +128,7 @@ class Snake implements Movable, Drawable{
         segmentLocations.add(new Point(w / 2, h / 2));
     }
 
-
+    @Override
     public void move() {
         // Move the body
         // Start at the back and move it
@@ -208,6 +207,7 @@ class Snake implements Movable, Drawable{
         return false;
     }
 
+    @Override
     public void draw(Canvas canvas, Paint paint) {
 
         // Don't run this code if ArrayList has nothing in it

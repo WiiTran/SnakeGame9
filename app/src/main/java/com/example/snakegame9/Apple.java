@@ -9,9 +9,9 @@ import android.graphics.Point;
 import java.util.Random;
 
 // Import Drawable interface
-import com.example.snakegame9.Drawable;
 
-public class Apple extends MovableObject implements Drawable {
+
+public class Apple extends GameObject implements Drawable {
 
     // The location of the apple on the grid
     // Not in pixels
@@ -44,9 +44,11 @@ public class Apple extends MovableObject implements Drawable {
         mBitmapApple = Bitmap.createScaledBitmap(mBitmapApple, s, s, false);
     }
 
+    @Override
     public void move() {
         // Apples don't move, so this method is empty
     }
+
     // This is called every time an apple is eaten
     void spawn(){
         // Choose two random values and place the apple
@@ -60,6 +62,7 @@ public class Apple extends MovableObject implements Drawable {
    // Point getLocation(){return location;}
 
     // Draw the apple
+    @Override
     public void draw(Canvas canvas, Paint paint){
         canvas.drawBitmap(mBitmapApple,
                 location.x * mSize, location.y * mSize, paint);
