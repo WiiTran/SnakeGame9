@@ -26,12 +26,4 @@
         android:layout_marginTop="12dp"
         android:text="Pause" />
 
-    <TextView
-        android:layout_width="60dp"
-        android:layout_height="30dp"
-        android:text="Huy Tran"
-        android:layout_marginLeft="100dp"
-
-        />
-
 </LinearLayout>
