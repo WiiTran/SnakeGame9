@@ -3,10 +3,13 @@ package com.example.snakegame9;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
@@ -184,8 +187,11 @@ class SnakeGame extends SurfaceView implements Runnable {
         if (mSurfaceHolder.getSurface().isValid()) {
             mCanvas = mSurfaceHolder.lockCanvas();
 
+            Bitmap gameBackground = BitmapFactory.decodeResource(getResources(), R.drawable.mesquitedunes);
+            mCanvas.drawBitmap(gameBackground, null, new Rect(0, 0, mCanvas.getWidth(), mCanvas.getHeight()), null);
+
             // Fill the screen with a color
-            mCanvas.drawColor(Color.argb(255, 26, 128, 182));
+//            mCanvas.drawColor(Color.argb(255, 26, 128, 182));
 
             // Set the size and color of the mPaint for the text
             mPaint.setColor(Color.argb(255, 255, 255, 255));

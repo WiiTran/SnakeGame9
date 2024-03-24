@@ -14,8 +14,6 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import androidx.core.content.res.ResourcesCompat;
-
 public class SnakeActivity extends Activity {
 
     // Declare an instance of SnakeGame
@@ -57,7 +55,7 @@ public class SnakeActivity extends Activity {
                 FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT
         );
-        params.setMargins(20, 20, 20, 20); // Adjust margins as needed
+        params.setMargins(200, 20, 20, 20); // Adjust margins as needed
         layout.addView(pauseButton, params);
 
         TextView textView = new TextView(this);
