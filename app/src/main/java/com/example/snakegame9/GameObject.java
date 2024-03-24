@@ -3,10 +3,10 @@ package com.example.snakegame9;
 import android.graphics.Point;
 
 
-public abstract class MovableObject {
+public abstract class GameObject {
     protected Point location;
 
-    public MovableObject() {
+    public GameObject() {
         location = new Point();
     }
 
