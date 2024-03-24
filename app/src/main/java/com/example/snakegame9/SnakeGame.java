@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -42,6 +43,7 @@ class SnakeGame extends SurfaceView implements Runnable {
     private Canvas mCanvas;
     private SurfaceHolder mSurfaceHolder;
     private Paint mPaint;
+    private Typeface customTypeFace = Typeface.createFromAsset(getContext().getAssets(), "Rakkas-Regular.ttf");
 
     // A snake ssss
     private Snake mSnake;
@@ -201,6 +203,7 @@ class SnakeGame extends SurfaceView implements Runnable {
                 // Set the size and color of the mPaint for the text
                 mPaint.setColor(Color.argb(255, 255, 255, 255));
                 mPaint.setTextSize(250);
+                mPaint.setTypeface(customTypeFace);
 
                 // Draw the message
                 // We will give this an international upgrade soon

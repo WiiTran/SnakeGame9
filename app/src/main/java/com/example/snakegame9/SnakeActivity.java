@@ -3,6 +3,7 @@ package com.example.snakegame9;
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Display;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import androidx.core.content.res.ResourcesCompat;
 
 public class SnakeActivity extends Activity {
 
@@ -38,6 +41,8 @@ public class SnakeActivity extends Activity {
         // Setup the pause button
         Button pauseButton = new Button(this);
         pauseButton.setText("Pause");
+        Typeface customTypeFace = Typeface.createFromAsset(getAssets(), "Rakkas-Regular.ttf");
+        pauseButton.setTypeface(customTypeFace);
         pauseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,12 +60,9 @@ public class SnakeActivity extends Activity {
         params.setMargins(20, 20, 20, 20); // Adjust margins as needed
         layout.addView(pauseButton, params);
 
-        //setContentView(R.layout.activity_snake);
-        //final TextView helloTextView = (TextView) findViewById(R.id.ourNames);
-        //helloTextView.setText("Huy Tran, Nicholas Sanchez");
-
         TextView textView = new TextView(this);
         textView.setText("Huy Tran and Nicholas Sanchez");
+        textView.setTypeface(customTypeFace);
         textView.setTextColor(Color.WHITE);
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
 
